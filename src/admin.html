@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admingränssnitt</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/logout.js"></script>
+    <script type="module" src="js/menu.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="admin-header">
+            <h1>Restaurang blabla</h1>
+        </div>
+        <div class="logout-div">
+            <button id="logout-link">Logga ut</button>
+        </div>
+    </header>
+    <main>
+        <div id="menu-container">
+            <div class="menu-item">
+                <h2 class="starters">Förrätter</h2>
+                <ul id="starter-list"></ul>
+                <button id="addStarterBtn" class="starter-btn">Lägg till ny förrätt</button>
+            </div>
+
+            <div id="addStarterModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Lägg till ny förrätt</h2>
+                    <form id="addStarterForm">
+                        <label for="starterName">Namn:</label>
+                        <input type="text" id="starterName" required>
+                        <label for="starterPrice">Pris:</label>
+                        <input type="number" id="starterPrice" required>
+                        <button type="submit">Lägg till</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <label for="newName">Nytt namn:</label>
+              <input type="text" id="newName">
+              <label for="newPrice">Nytt pris:</label>
+              <input type="number" id="newPrice">
+              <button id="updateBtn">Uppdatera</button>
+            </div>
+          </div>
+    </main>
+</body>
+
+</html>

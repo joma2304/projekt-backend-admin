@@ -1,0 +1,166 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #4bb8dc;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.admin-header h1 {
+    margin: 0;
+}
+
+/*För att logga ut*/
+.logout-div {
+margin-top: 10px;
+}
+
+#logout-link {
+    padding: 8px 30px;
+    border-radius: 30px;
+    background-color: rgb(225, 68, 68);
+    color: white;
+    cursor: pointer;
+}
+
+#logout-link:hover {
+    background-color: rgb(221, 28, 28);
+}
+
+/*Styling inlogg*/
+/* Formulär */
+.form-container {
+    max-width: 900px;
+    width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-title {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-button {
+    max-width: 200px;
+    width: 100%;
+    padding: 10px;
+    background-color: #4bb8dc;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-button:hover {
+    background-color: #3c92af;
+}
+
+#error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+/*Modal för att uppdater*/
+.modal {
+    display: none; /* Göm modalen som standard */
+    position: fixed; /* Lägg modalen ovanpå allt annat innehåll */
+    z-index: 1; /* Visa modalen över allt annat innehåll */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full bredd */
+    height: 100%; /* Full höjd */
+    overflow: auto; /* Lägg till skroll om modalen är för stor */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent bakgrund */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centrera modalen vertikalt och horisontellt */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Justera bredden efter behov */
+    border-radius: 5px;
+
+}
+
+/* Stängningsknapp */
+.close {
+    color: #e20000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(172, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#menu-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #bfdee8;
+    border-radius: 30px;
+    margin-top: 20px;
+    padding: 10px;
+    max-width: 900px;
+}
+
+.menu-item {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+#starter-list {
+    list-style: none;
+}
+
+button {
+    margin-left: 3px;
+    padding: 2px 5px;
+    background-color: #bfdee8;
+    border-radius: 50px;
+}
+
+button:hover {
+    background-color: #4bb8dc;
+}
+
+#addStarterBtn {
+    margin-left: 80px;
+    margin-right: auto;
+}
+
+

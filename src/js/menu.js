@@ -69,19 +69,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Skapa knapp för att radera rätt
             const deleteButton = document.createElement("button");
-            deleteButton.textContent = "Radera";
+            deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
             deleteButton.addEventListener("click", async () => {
                 await deleteStarter(starter._id); // Anropa deleteStarter med rättens id
             });
 
             // Skapa knapp för att ändra rätt
             const editButton = document.createElement("button");
-            editButton.textContent = "Ändra";
+            editButton.innerHTML = '<i class="fas fa-edit"></i>'; 
             editButton.addEventListener("click", () => {
                 const modal = document.getElementById("myModal");
                 modal.style.display = "block";
 
-                const span = document.getElementsByClassName("close")[0];
+                const span = document.getElementsByClassName("close1")[0];
                 span.onclick = function () {
                     modal.style.display = "none";
                 };
@@ -150,9 +150,9 @@ document.getElementById("addStarterForm").addEventListener("submit", async funct
             location.reload(); // Ladda om sidan för att visa uppdaterad lista
             // Stäng modalen efter att förrätten har lagts till
             document.getElementById("addStarterModal").style.display = "none";
-            // För vidare hantering eller uppdatering av gränssnittet
+            
         } else {
-            // Visa felmeddelande om något gick fel med POST-begäran
+            // Visa felmeddelande om något gick fel med POST
             console.error("POST-begäran misslyckades:", response.statusText);
         }
     } catch (error) {

@@ -28,6 +28,7 @@ margin-top: 10px;
     background-color: rgb(225, 68, 68);
     color: white;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 #logout-link:hover {
@@ -112,7 +113,7 @@ label {
     max-width: 400px;
 }
 
-/* Stängningsknapp */
+/* Stängningsknappar för modaler */
 .close, .close1 {
     color: #e20000;
     float: right;
@@ -134,6 +135,10 @@ label {
     cursor: pointer;
 }
 
+.updatemodalbtn {
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+/*Meny*/
 #menu-container {
     display: flex;
     align-items: center;
@@ -143,6 +148,25 @@ label {
     margin-top: 20px;
     padding: 10px;
     max-width: 900px;
+    width: 95%;
+}
+
+@media only screen and (max-width: 700px) {
+    .admin-header h1 {
+        padding: 10px;
+    }
+
+    #menu-container {
+        display: block;
+        width: 95%;
+    }
+
+    .menu-item {
+        margin-top: 8px;
+        padding: 5px;
+        max-width: 95%;
+    }
+
 }
 
 .menu-item {
@@ -151,28 +175,63 @@ label {
     border-radius: 30px;
     width: 100%;
     font-size: 120%;
+    min-height: 300px;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 #starter-list {
     list-style: none;
+    text-align: center;
 }
 
+#main-course-list {
+    list-style: none;
+    text-align: center;
+}
+
+.main-courses, .starters {
+    text-align: left;
+}
+/*Knappar*/
 button {
-    margin-left: 3px;
-    padding: 2px 5px;
-    border-radius: 50px;
+    padding: 2px 8px;
+    border-radius: 30px;
     border: none;
     cursor: pointer;
+
 }
 
 button:hover {
-    background-color: #4bb8dc;
+    background-color: #ffffff;
 }
 
+.delete-button, .edit-button {
+    margin-left: 5px;
+    background-color: transparent;
+}
+
+.delete-button:hover, .edit-button:hover {
+    color: #888;
+}
+
+
 #addStarterBtn {
-    margin-left: 80px;
+    margin-top: 20px;
+    margin-left: auto;
     margin-right: auto;
-    padding: 5px;
+    padding: 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#addMainCourseBtn {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 

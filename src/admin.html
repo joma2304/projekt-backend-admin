@@ -7,7 +7,8 @@
     <title>Admingränssnitt</title>
     <link rel="stylesheet" href="css/style.css">
     <script type="module" src="js/logout.js"></script>
-    <script type="module" src="js/menu.js"></script>
+    <script type="module" src="js/starters.js"></script>
+    <script type="module" src="js/maincourse.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -15,20 +16,28 @@
 <body>
     <header>
         <div class="admin-header">
-            <h1>Restaurang blabla</h1>
+            <h1>Restaurang Hansa - Admin</h1>
         </div>
         <div class="logout-div">
             <button id="logout-link">Logga ut</button>
         </div>
     </header>
     <main>
+        <!-- Förätter-->
         <div id="menu-container">
             <div class="menu-item">
                 <h2 class="starters">Förrätter</h2>
                 <ul id="starter-list"></ul>
-                <button id="addStarterBtn" class="starter-btn">Lägg till ny förrätt</button>
+                <button id="addStarterBtn" class="starter-btn">Lägg till rätt</button>
+            </div>
+            <!-- Huvudrätter-->
+            <div class="menu-item">
+                <h2 class="main-courses">Huvudrätter</h2>
+                <ul id="main-course-list"></ul>
+                <button id="addMainCourseBtn" class="main-course-btn">Lägg till rätt</button>
             </div>
 
+            <!-- Modal för förrätt-->
             <div id="addStarterModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
@@ -38,23 +47,52 @@
                         <input type="text" id="starterName" required>
                         <label for="starterPrice">Pris:</label>
                         <input type="number" id="starterPrice" required>
-                        <button type="submit" id="addbtn">Lägg till</button>
+                        <button type="submit" class="updatemodalbtn" id="addbtn">Lägg till</button>
                     </form>
                 </div>
             </div>
-
+            <!-- Modal för förrätt-->
         </div>
         <div id="myModal" class="modal">
             <div class="modal-content">
-              <span class="close1">&times;</span>
-              <h2>Ändra förrätt</h2>
-              <label for="newName">Nytt namn:</label>
-              <input type="text" id="newName">
-              <label for="newPrice">Nytt pris:</label>
-              <input type="number" id="newPrice">
-              <button id="updateBtn">Uppdatera</button>
+                <span class="close1">&times;</span>
+                <h2>Ändra förrätt</h2>
+                <label for="newName">Nytt namn:</label>
+                <input type="text" id="newName">
+                <label for="newPrice">Nytt pris:</label>
+                <input type="number" id="newPrice">
+                <button id="updateBtn" class="updatemodalbtn">Uppdatera</button>
             </div>
-          </div>
+        </div>
+        <!-- Modal för huvudrätt-->
+        <div id="addMainCourseModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Lägg till ny huvudrätt</h2>
+                <form id="addMainCourseForm">
+                    <label for="mainCourseName">Namn:</label>
+                    <input type="text" id="mainCourseName" required>
+                    <label for="mainCoursePrice">Pris:</label>
+                    <input type="number" id="mainCoursePrice" required>
+                    <button type="submit" class="updatemodalbtn">Lägg till</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div id="updateMainCourseModal" class="modal">
+            <div class="modal-content">
+                <span class="close1">&times;</span>
+                <label for="newMainName">Nytt namn:</label>
+                <input type="text" id="newMainName">
+                <label for="newMainPrice">Nytt pris:</label>
+                <input type="number" id="newMainPrice">
+                <button id="updateMainBtn" class="updatemodalbtn">Uppdatera</button>
+            </div>
+        </div>
+
+
+
     </main>
 </body>
 

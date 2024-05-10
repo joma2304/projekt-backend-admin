@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Skapa knapp för att radera rätt
             const deleteButton = document.createElement("button");
             deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
+            deleteButton.classList.add("delete-button"); // Lägg till klassen "delete-button"
             deleteButton.addEventListener("click", async () => {
                 await deleteStarter(starter._id); // Anropa deleteStarter med rättens id
             });
@@ -77,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Skapa knapp för att ändra rätt
             const editButton = document.createElement("button");
             editButton.innerHTML = '<i class="fas fa-edit"></i>'; 
+            editButton.classList.add("edit-button"); // Lägg till klassen "edit-button"
             editButton.addEventListener("click", () => {
                 const modal = document.getElementById("myModal");
                 modal.style.display = "block";

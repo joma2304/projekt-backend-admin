@@ -1,0 +1,424 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+#welcome-section {
+    min-height: 60vh;
+    width: calc(100% - 20px);
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-size: cover;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    font-size: 1.3em;
+}
+
+.welcome-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding: 20px;
+}
+
+.welcome {
+    font-size: 1.9em;
+}
+
+b {
+    color: #de7e1f;
+}
+
+#menu-section {
+    min-height: 60vh;
+}
+
+#about-section {
+    min-height: 50vh;
+    width: calc(100% - 20px);
+    background-image: url("/src/images/hansamat.jpg");
+    background-size: cover;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    color: black;
+}
+
+.about {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+
+.about-text {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+#book-section {
+    background-color: rgba(255, 255, 255, 0.3);
+    min-height: 50vh;
+    width: calc(100% - 20px);
+    background-size: cover;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/*navigeringsmenyn */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #124559; 
+    color: #FFFFFF;
+    padding: 20px 0;
+    transition: background-color 0.3s ease; 
+}
+
+.header.transparent {
+    background-color: rgba(18, 69, 89, 0.3); 
+}
+
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+    color: #de7e1f;
+}
+
+.login-div {
+    position: absolute;
+    top: 20;
+    right: 80;
+}
+
+.login-div a {
+    color: white;
+    text-decoration: none;
+    font-size: 150%;
+}
+
+.login-div a:hover {
+    color: #de7e1f;
+}
+
+// Media queries för responsiv design
+@media screen and (max-width: 768px) {
+
+    /*Nav-Meny*/
+    .header-container {
+        padding: 0 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #124559;
+        padding: 40px;
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .nav-item {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .nav-item a {
+        color: #FFFFFF;
+    }
+
+    .nav-item a:hover {
+        color: #de7e1f;
+    }
+
+    .nav-toggle {
+        display: block;
+        position: relative;
+        z-index: 1000;
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    .nav-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #FFFFFF;
+        margin-bottom: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .nav-toggle.active span {
+        background-color: #de7e1f;
+    }
+
+    .nav-toggle.active {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .login-div {
+        position: absolute;
+        top: 15;
+        right: 30;
+    }
+
+}
+
+body {
+    width: 100%;
+    background-image: url("/src/images/hansa.jpg");
+    background-size: cover;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.menu-list {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.menu-list:hover {
+    transform: translateY(-5px);
+}
+
+.menu-list h2 {
+    margin: 0;
+    padding: 20px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #67a2be;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-list ul li {
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.menu-list ul li:last-child {
+    border-bottom: none;
+}
+
+
+
+@media screen and (max-width: 968px) {
+    .menu-list {
+        width: calc(80% - 20px);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .menu-list {
+        width: calc(100% - 20px);
+    }
+}
+
+/*Bokning*/
+.book-section {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.book {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.book-text {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#bookingForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+#bookingForm input[type="text"],
+#bookingForm input[type="tel"],
+#bookingForm input[type="number"],
+#bookingForm input[type="date"],
+#bookingForm input[type="time"] {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#bookingForm button {
+    padding: 10px 20px;
+    background-color: #de7e1f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#bookingForm button:hover {
+    background-color: #c2701d;
+}
+
+
+/*Meddelande vid bokning*/
+.message {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.success {
+    background-color: #a0d468;
+    /* Grön färg */
+    color: #fff;
+}
+
+.error {
+    background-color: #ed5565;
+    /* Röd färg */
+    color: #fff;
+}
+
+.footer {
+    background-color: #124559;
+    color: white;
+    display: block;
+    padding: 40px; 
+}
+
+.footer ul li {
+    list-style: none;
+    font-size: 1.3em;
+}
+
+.footer ul a {
+    text-decoration: underline;
+    color: white;
+}
+.footer ul a:hover {
+    text-decoration: none;
+    color: rgb(197, 197, 197);
+}
+

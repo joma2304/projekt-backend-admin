@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             // Lägg till knapparna bredvid huvudrätten
-            listItem.appendChild(deleteButton);
             listItem.appendChild(editButton);
+            listItem.appendChild(deleteButton);
 
             // Lägg till huvudrätten och knapparna i listan
             mainCourseList.appendChild(listItem);

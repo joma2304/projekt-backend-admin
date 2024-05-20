@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             // Lägg till knapparna bredvid rätten
-            listItem.appendChild(deleteButton);
             listItem.appendChild(editButton);
+            listItem.appendChild(deleteButton);
 
             // Lägg till rätten och knapparna i listan
             starterList.appendChild(listItem);

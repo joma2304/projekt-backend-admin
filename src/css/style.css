@@ -7,8 +7,8 @@
 
 /* Header */
 header {
-    background-color: #c6cbcd;
-    color: black;
+    background-color: #026e98;
+    color: rgb(255, 255, 255);
     padding: 20px 0;
     text-align: center;
 }
@@ -19,20 +19,20 @@ header {
 
 /*För att logga ut*/
 .logout-div {
-margin-top: 10px;
+    margin-top: 10px;
 }
 
 #logout-link {
     padding: 8px 30px;
-    border-radius: 30px;
-    background-color: rgb(225, 68, 68);
+    border-radius: 10px;
+    background-color: rgb(223, 121, 53);
     color: white;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 #logout-link:hover {
-    background-color: rgb(221, 28, 28);
+    background-color: rgb(192, 95, 25);
 }
 
 /*Styling inlogg*/
@@ -42,7 +42,7 @@ margin-top: 10px;
     width: 90%;
     margin: 50px auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #de7e1f;
     border-radius: 5px;
 }
 
@@ -70,7 +70,7 @@ label {
     max-width: 200px;
     width: 100%;
     padding: 10px;
-    background-color: #4bb8dc;
+    background-color: #db882e;
     color: #fff;
     border: none;
     border-radius: 20px;
@@ -81,7 +81,7 @@ label {
 }
 
 .form-button:hover {
-    background-color: #3c92af;
+    background-color: #c3711a;
 }
 
 #error-message {
@@ -91,30 +91,33 @@ label {
 
 /*Modal för att uppdater*/
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: hidden; 
-    background-color: rgba(0, 0, 0, 0.4); 
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Modal content */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; 
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; 
+    width: 80%;
     border-radius: 20px;
     max-width: 400px;
 }
 
 /* Stängningsknappar för modaler */
-.close, .close1 {
+.close,
+.close1,
+.close2,
+.close3 {
     color: #e20000;
     float: right;
     font-size: 28px;
@@ -135,19 +138,47 @@ label {
     cursor: pointer;
 }
 
+.close2:hover, 
+.close2:focus {
+    color: rgb(172, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close3:hover, 
+.close3:focus {
+    color: rgb(172, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .updatemodalbtn {
     box-shadow: rgba(0, 0, 0, 0.09) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+
 /*Meny*/
 #menu-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #cacdcf;
+    background-color: #026e98;
     border-radius: 30px;
     margin-top: 20px;
     padding: 10px;
-    max-width: 900px;
+    max-width: 1300px;
+    width: 95%;
+}
+
+/*Dricka*/
+#drinks-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #de7e1f;
+    border-radius: 30px;
+    margin-top: 20px;
+    padding: 10px;
+    max-width: 1300px;
     width: 95%;
 }
 
@@ -161,30 +192,74 @@ label {
         width: 95%;
     }
 
+    #drinks-container {
+        display: block;
+        width: 95%;
+    }
+
     .menu-item {
         margin-top: 8px;
         padding: 5px;
         max-width: 95%;
+        min-width: none;
+        font-size: 1.2em;
     }
 
 }
 
-.menu-item {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 30px;
-    width: 100%;
-    font-size: 120%;
-    min-height: 300px;
-    margin-right: 10px;
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
+@media only screen and (min-width: 701px) and (max-width: 1200px) {
+    .admin-header h1 {
+        padding: 10px;
+    }
+
+    #menu-container {
+        display: block;
+        width: 65%;
+    }
+
+    #drinks-container {
+        display: block;
+        width: 65%;
+    }
+
+    .menu-item {
+        margin-top: 8px;
+        padding: 5px;
+        max-width: 97%;
+        min-width: none;
+        font-size: 1.2em;
+    }
+
 }
+
+
+    .menu-item {
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 30px;
+        width: 100%;
+        font-size: 120%;
+        min-height: 300px;
+        margin-right: 10px;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.3em;
+    }
 
 #starter-list {
     list-style: none;
     text-align: center;
+}
+
+#starter-list li {
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+    margin-bottom: 5px;
+}
+
+li:hover {
+    background-color: #f2f2f2;
 }
 
 #main-course-list {
@@ -192,29 +267,94 @@ label {
     text-align: center;
 }
 
-.main-courses, .starters {
+#main-course-list li {
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+    margin-bottom: 5px;
+}
+
+#dessert-list {
+    list-style: none;
+    text-align: center;
+}
+
+#dessert-list li {
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+    margin-bottom: 5px;
+}
+
+#beer-list {
+    list-style: none;
+    text-align: center;
+}
+
+#beer-list li {
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+    margin-bottom: 5px;
+}
+
+#wine-list {
+    list-style: none;
+    text-align: center;
+}
+
+#wine-list li {
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+    margin-bottom: 5px;
+}
+
+#drink-list {
+    list-style: none;
+    text-align: center;
+}
+
+#drink-list li {
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+    margin-bottom: 5px;
+}
+
+.main-courses,
+.starters,
+.desserts,
+.beers,
+.wines,
+.nonalcoholics {
     text-align: left;
 }
+
 /*Knappar*/
 button {
     padding: 2px 8px;
-    border-radius: 30px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
 
 }
 
 button:hover {
-    background-color: #ffffff;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-.delete-button, .edit-button {
+.delete-button,
+.edit-button {
     margin-left: 5px;
     background-color: transparent;
+    font-size: 0.9em;
 }
 
-.delete-button:hover, .edit-button:hover {
-    color: #888;
+.delete-button:hover,
+.edit-button:hover {
+    color: #c3711a;
+    cursor: pointer;
+}
+
+.updatemodalbtn {
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 
@@ -234,4 +374,34 @@ button:hover {
     box-shadow: rgba(0, 0, 0, 0.09) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+#addDessertBtn {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
 
+#addBeerBtn {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#addWineBtn {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#addDrinkBtn {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}

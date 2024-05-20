@@ -9,6 +9,10 @@
     <script type="module" src="js/logout.js"></script>
     <script type="module" src="js/starters.js"></script>
     <script type="module" src="js/maincourse.js"></script>
+    <script type="module" src="js/dessert.js"></script>
+    <script type="module" src="js/beer.js"></script>
+    <script type="module" src="js/wine.js"></script>
+    <script type="module" src="js/nonalcoholic.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -36,27 +40,55 @@
                 <ul id="main-course-list"></ul>
                 <button id="addMainCourseBtn" class="main-course-btn">Lägg till rätt</button>
             </div>
-
-            <!-- Modal för förrätt-->
-            <div id="addStarterModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>Lägg till ny förrätt</h2>
-                    <form id="addStarterForm">
-                        <label for="starterName">Namn:</label>
-                        <input type="text" id="starterName" required>
-                        <label for="starterPrice">Pris:</label>
-                        <input type="number" id="starterPrice" required>
-                        <button type="submit" class="updatemodalbtn" id="addbtn">Lägg till</button>
-                    </form>
-                </div>
+            <!--Efterrätter-->
+            <div class="menu-item">
+                <h2 class="desserts">Desserter</h2>
+                <ul id="dessert-list"></ul>
+                <button id="addDessertBtn">Lägg till rätt</button>
             </div>
-            <!-- Modal för förrätt-->
         </div>
+        <div id="drinks-container">
+            <!--Öl-->
+            <div class="menu-item">
+                <h2 class="beers">Öl</h2>
+                <ul id="beer-list"></ul>
+                <button id="addBeerBtn">Lägg till öl</button>
+            </div>
+            <!--Vin-->
+            <div class="menu-item">
+                <h2 class="wines">Vin</h2>
+                <ul id="wine-list"></ul>
+                <button id="addWineBtn">Lägg till vin</button>
+            </div>
+            <!--Dricka-->
+            <div class="menu-item">
+                <h2 class="nonalcoholics">Alkoholfritt</h2>
+                <ul id="drink-list"></ul>
+                <button id="addDrinkBtn">Lägg till dricka</button>
+            </div>
+        </div>
+
+
+
+        <!-- Modal för att lägga till förrätt-->
+        <div id="addStarterModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Lägg till ny förrätt</h2>
+                <form id="addStarterForm">
+                    <label for="starterName">Namn:</label>
+                    <input type="text" id="starterName" required>
+                    <label for="starterPrice">Pris:</label>
+                    <input type="number" id="starterPrice" required>
+                    <button type="submit" class="updatemodalbtn" id="addbtn">Lägg till</button>
+                </form>
+            </div>
+        </div>
+        <!-- Modal för uppdatera förrätt-->
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close1">&times;</span>
-                <h2>Ändra förrätt</h2>
+                <h2>Ändra</h2>
                 <label for="newName">Nytt namn:</label>
                 <input type="text" id="newName">
                 <label for="newPrice">Nytt pris:</label>
@@ -64,7 +96,7 @@
                 <button id="updateBtn" class="updatemodalbtn">Uppdatera</button>
             </div>
         </div>
-        <!-- Modal för huvudrätt-->
+        <!-- Modal för att lägga till huvudrätt-->
         <div id="addMainCourseModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -79,10 +111,11 @@
             </div>
         </div>
 
-
+        <!-- Modal för uppdatera huvudrätt-->
         <div id="updateMainCourseModal" class="modal">
             <div class="modal-content">
                 <span class="close1">&times;</span>
+                <h2>Ändra</h2>
                 <label for="newMainName">Nytt namn:</label>
                 <input type="text" id="newMainName">
                 <label for="newMainPrice">Nytt pris:</label>
@@ -90,6 +123,125 @@
                 <button id="updateMainBtn" class="updatemodalbtn">Uppdatera</button>
             </div>
         </div>
+
+        <!-- Modal för att lägga till efterrätt -->
+        <div id="addDessertModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Lägg till ny dessert</h2>
+                <form id="addDessertForm">
+                    <label for="dessertName">Namn:</label>
+                    <input type="text" id="dessertName" name="dessertName" required><br>
+                    <label for="dessertPrice">Pris:</label>
+                    <input type="number" id="dessertPrice" name="dessertPrice" required>
+                    <button type="submit" class="updatemodalbtn">Lägg till</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal för att ändra efterrätt -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close1">&times;</span>
+                <h2>Ändra</h2>
+                <form id="updateDessertForm">
+                    <label for="newName">Nytt namn:</label>
+                    <input type="text" id="newName" name="newName" required><br>
+                    <label for="newPrice">Nytt pris:</label>
+                    <input type="number" id="newPrice" name="newPrice" required><br>
+                    <button id="updateBtn" class="updatemodalbtn">Uppdatera</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal för att lägga till öl -->
+        <div id="addBeerModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Lägg till ny öl</h2>
+                <form id="addBeerForm">
+                    <label for="beerName">Namn:</label>
+                    <input type="text" id="beerName" required>
+                    <label for="beerPrice">Pris:</label>
+                    <input type="number" id="beerPrice" required>
+                    <button type="submit" class="updatemodalbtn">Lägg till</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal för att uppdatera öl -->
+        <div id="updateBeerModal" class="modal">
+            <div class="modal-content">
+                <span class="close1">&times;</span>
+                <h2>Ändra</h2>
+                <label for="newBeerName">Nytt namn:</label>
+                <input type="text" id="newBeerName">
+                <label for="newBeerPrice">Nytt pris:</label>
+                <input type="number" id="newBeerPrice">
+                <button id="updateBeerBtn" class="updatemodalbtn">Uppdatera</button>
+            </div>
+        </div>
+
+        <!-- Modal för att lägga till vin -->
+        <div id="addWineModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Lägg till nytt vin</h2>
+                <form id="addWineForm">
+                    <label for="wineName">Namn:</label>
+                    <input type="text" id="wineName" required>
+                    <label for="winePrice">Pris:</label>
+                    <input type="number" id="winePrice" required>
+                    <button type="submit">Lägg till</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal för att ändra vin -->
+        <div id="updateWineModal" class="modal">
+            <div class="modal-content">
+                <span class="close3">&times;</span>
+                <h2>Ändra</h2>
+                <label for="newWineName">Nytt Namn:</label>
+                <input type="text" id="newWineName">
+                <label for="newWinePrice">Nytt Pris:</label>
+                <input type="number" id="newWinePrice">
+                <button id="updateWineBtn">Uppdatera</button>
+            </div>
+        </div>
+
+        <!-- Modal för att lägga till en ny alkoholfri dryck -->
+        <div id="addDrinkModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Lägg till ny alkoholfri dryck</h2>
+                <form id="addDrinkForm">
+                    <label for="drinkName">Namn:</label>
+                    <input type="text" id="drinkName" required>
+                    <label for="drinkPrice">Pris:</label>
+                    <input type="number" id="drinkPrice" required>
+                    <button type="submit" class="updatemodalbtn">Lägg till</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal för att uppdatera en alkoholfri dryck -->
+        <div id="updateDrinkModal" class="modal">
+            <div class="modal-content">
+                <span class="close2">&times;</span>
+                <h2>Ändra alkoholfri dryck</h2>
+                <label for="newDrinkName">Nytt namn:</label>
+                <input type="text" id="newDrinkName">
+                <label for="newDrinkPrice">Nytt pris:</label>
+                <input type="number" id="newDrinkPrice">
+                <button id="updateDrinkBtn" class="updatemodalbtn">Uppdatera</button>
+            </div>
+        </div>
+
+
+
+
+
 
 
 

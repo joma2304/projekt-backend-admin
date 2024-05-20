@@ -9,13 +9,9 @@ document.getElementById("bookingForm").addEventListener("submit", async function
 // Konvertera FormData till ett objekt
 const bookingData = {};
 formData.forEach((value, key) => {
-    if (key === 'phoneNumber') {
-        // Konvertera telefonnummer till en siffra
-        bookingData[key] = parseFloat(value);
-    } else {
-        bookingData[key] = value;
-    }
+    bookingData[key] = value;
 });
+
 
     // Skicka bokningsdata till backend
     try {

@@ -77,8 +77,8 @@ async function deleteBooking(id) {
     } catch (error) {
         console.error("Ett fel uppstod:", error);
         const errContainer = document.getElementById("err-msg");
-        errorContainer.textContent = "Ett fel uppstod. Försök igen senare.";
-        errorContainer.style.display = "block"; // Visa felmeddelandet
+        errContainer.textContent = "Ett fel uppstod. Försök igen senare.";
+        errContainer.style.display = "block"; // Visa felmeddelandet
     }
 }
 

@@ -1,4 +1,4 @@
-///Token
+// Token
 const jwtToken = localStorage.getItem('jwtToken');
 
 // Funktion för att hämta bordsbokningar från backend
@@ -30,7 +30,7 @@ function displayBookings(bookings) {
     }
 
     bookings.forEach(booking => {
-        const bookingItem = document.createElement("li");
+        const bookingItem = document.createElement("div");
         bookingItem.classList.add("booking-item");
         bookingItem.innerHTML = `
             <h3>${booking.name}</h3>
@@ -39,22 +39,30 @@ function displayBookings(bookings) {
             <p>Datum: ${booking.date}</p>
             <p>Tid: ${booking.time}</p>
             <div class="actions">
-                <button onclick="deleteBooking('${booking._id}')">Ta bort</button>
+                <button class="delete-btn">Ta bort</button>
             </div>
         `;
         bookingsList.appendChild(bookingItem);
+
+        // Lägg till eventlyssnare för varje delete-knapp
+        const deleteBtn = bookingItem.querySelector(".delete-btn");
+        deleteBtn.addEventListener("click", () => deleteBooking(booking._id));
     });
 }
 
 // Funktion för att ta bort en bordsbokning
 async function deleteBooking(id) {
-    if (!confirm("Är du säker på att du vill ta bort bokningen?")) {
+    if (!confirm("Är du säker på att du vill ta bort bokningen?")) { //För att inte råka ta bort bokningar
         return;
     }
 
     try {
         const response = await fetch(`https://project-webbtjanst.onrender.com/protected/booking/${id}`, {
-            method: "DELETE"
+            method: "DELETE", 
+            headers: {
+                'Authorization': "Bearer " + jwtToken,
+                "Content-Type": "application/json"
+            }
         });
         if (response.ok) {
             alert("Bokningen har tagits bort.");
@@ -62,11 +70,15 @@ async function deleteBooking(id) {
             displayBookings(bookings);
         } else {
             const errorMessage = await response.text();
-            alert(`Ett fel uppstod: ${errorMessage}`);
+            const errContainer = document.getElementById('err-msg');
+            errContainer.textContent = `Ett fel uppstod: ${errorMessage}`;
+            errContainer.style.display = 'block'; //Visa meddelande
         }
     } catch (error) {
         console.error("Ett fel uppstod:", error);
-        alert("Ett fel uppstod. Försök igen senare.");
+        const errContainer = document.getElementById("err-msg");
+        errorContainer.textContent = "Ett fel uppstod. Försök igen senare.";
+        errorContainer.style.display = "block"; // Visa felmeddelandet
     }
 }
 
@@ -75,4 +87,5 @@ window.onload = async function () {
     const bookings = await fetchBookings();
     displayBookings(bookings);
 };
+
 

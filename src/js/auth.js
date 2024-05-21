@@ -1,5 +1,5 @@
 window.onload = init;
-//KOllar så att token finns för protected.html annars skickas man till login.html
+//KOllar så att token finns för admin.html annars skickas man till login.html
 async function init() {
 
     const jwtToken = localStorage.getItem("jwtToken");

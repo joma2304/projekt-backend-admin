@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
             editButton.innerHTML = '<i class="fas fa-edit"></i>'; 
             editButton.classList.add("edit-button"); // Lägg till klassen "edit-button"
             editButton.addEventListener("click", () => {
-                const modal = document.getElementById("myModal");
+                const modal = document.getElementById("myDessertModal");
                 modal.style.display = "block";
 
                 const span = document.getElementsByClassName("close1")[0];
@@ -95,13 +95,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 };
 
                 // Fyll modalen med befintliga värden
-                document.getElementById("newName").value = dessert.dessertName;
-                document.getElementById("newPrice").value = dessert.dessertPrice;
+                document.getElementById("newDessertName").value = dessert.dessertName;
+                document.getElementById("newDessertPrice").value = dessert.dessertPrice;
 
-                const updateBtn = document.getElementById("updateBtn");
+                const updateBtn = document.getElementById("updateDessertBtn");
                 updateBtn.onclick = async () => {
-                    const newName = document.getElementById("newName").value;
-                    const newPrice = document.getElementById("newPrice").value;
+                    const newName = document.getElementById("newDessertName").value;
+                    const newPrice = document.getElementById("newDessertPrice").value;
                     if (newName && newPrice) {
                         const updatedDessert = await updateDessert(dessert._id, newName, newPrice);
                         location.reload(); // Ladda om sidan för att visa uppdaterad lista

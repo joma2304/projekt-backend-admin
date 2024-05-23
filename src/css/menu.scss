@@ -79,15 +79,27 @@ b {
 }
 
 #book-section {
-    background-color: rgba(255, 255, 255, 0.3);
-    min-height: 50vh;
-    width: calc(100% - 20px);
+    border-top: solid 5px black;
+    border-bottom: solid 5px black;
+    background-image: url("/src/images/booktable.webp");
     background-size: cover;
-    margin: 10px;
-    border-radius: 10px;
+    min-height: 50vh;
+    width: calc(100%);
+    background-size: cover;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.book-text {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin-bottom: 20px;
 }
 
 /*navigeringsmenyn */
@@ -251,7 +263,12 @@ b {
 
 body {
     width: 100%;
-    background-image: url("/src/images/hansa.jpg");
+    background-color: white;
+}
+
+.hansa-pic-div {
+    width: 100%;
+    background-image: url("/src/images/hansa.webp");
     background-size: cover;
 }
 
@@ -360,7 +377,7 @@ h1 {
 #bookingForm input[type="number"],
 #bookingForm input[type="date"],
 #bookingForm input[type="time"] {
-    width: 60%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;

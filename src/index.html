@@ -16,113 +16,124 @@
 </head>
 
 <body>
-    <header class="header" id="header">
-        <div class="header-container">
-            <a href="index.html" class="logo">
-                <h1 class="logo">Restaurang Hansa</h1>
-            </a>
-            <nav class="nav">
-                <div class="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+    <div class="hansa-pic-div">
+        <header class="header" id="header">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <h1 class="logo">Restaurang Hansa</h1>
+                </a>
+                <nav class="nav">
+                    <div class="nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="nav-list" id="navList">
+                        <li class="nav-item"><a href="#welcome-section" class="section-link"
+                                data-target="welcome-section">Start</a></li>
+                        <li class="nav-item"><a href="#menu-section" class="section-link"
+                                data-target="menu-section">Meny</a></li>
+                        <li class="nav-item"><a href="#about-section" class="section-link"
+                                data-target="about-section">Om
+                                oss</a></li>
+                        <li class="nav-item"><a href="#book-section" class="section-link"
+                                data-target="book-section">Boka</a></li>
+                    </ul>
+
+                    <div class="login-div">
+                        <a href="login.html"><i class="fa fa-lock"></i></a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section id="welcome-section" class="welcome-section">
+                <h2 class="welcome">Välkommen</h2>
+                <div class="welcome-text">
+                    <p>En resturang nära <b>havet</b> för dig som vill <b>njuta</b> lite extra.</p>
                 </div>
-                <ul class="nav-list" id="navList">
-                    <li class="nav-item"><a href="#welcome-section" class="section-link" data-target="welcome-section">Start</a></li>
-                    <li class="nav-item"><a href="#menu-section" class="section-link" data-target="menu-section">Meny</a></li>
-                    <li class="nav-item"><a href="#about-section" class="section-link" data-target="about-section">Om oss</a></li>
-                    <li class="nav-item"><a href="#book-section" class="section-link" data-target="book-section">Boka</a></li>
-                </ul>
-    
-                <div class="login-div">
-                    <a href="login.html"><i class="fa fa-lock"></i></a>
+            </section>
+            <section id="menu-section" class="menu-section">
+                <div class="menu">
+                    <div class="menu-container">
+                        <!-- Lista för förrätter -->
+                        <div class="menu-list">
+                            <h2 class="menu-heading">Förrätter</h2>
+                            <ul id="starter-list" class="menu-items"></ul>
+                        </div>
+                        <!-- Lista för huvudrätter -->
+                        <div class="menu-list">
+                            <h2 class="menu-heading">Huvudrätter</h2>
+                            <ul id="maincourse-list" class="menu-items"></ul>
+                        </div>
+                        <!-- Lista för desserter -->
+                        <div class="menu-list">
+                            <h2 class="menu-heading">Desserter</h2>
+                            <ul id="dessert-list" class="menu-items"></ul>
+                        </div>
+                    </div>
+
+                    <div class="menu-container">
+                        <!-- Lista för öl -->
+                        <div class="menu-list">
+                            <h2 class="menu-heading">Öl-lista</h2>
+                            <ul id="beer-list" class="menu-items"></ul>
+                        </div>
+                        <!-- Lista för viner -->
+                        <div class="menu-list">
+                            <h2 class="menu-heading">Vin-lista</h2>
+                            <ul id="wine-list" class="menu-items"></ul>
+                        </div>
+                        <!-- Lista för alkoholfria drycker -->
+                        <div class="menu-list">
+                            <h2 class="menu-heading">Alkoholfritt</h2>
+                            <ul id="nonalcoholic-list" class="menu-items"></ul>
+                        </div>
+                    </div>
                 </div>
-            </nav>
+            </section>
+
+            <section id="about-section" class="about-section">
+                <h2 class="about">Om oss</h2>
+                <div class="about-text">
+                    <p> Restaurang Hansa är en oas av kulinariska upplevelser där tradition möter modernitet. Belägen
+                        vid
+                        havet, erbjuder den enastående mat från havets skafferi, tillagad med omsorg och passion av våra
+                        erfarna kockar. Med en atmosfär som blandar elegans med avslappnad charm lockar Restaurang Hansa
+                        besökare från när och fjärran. Vår meny är en resa genom smaker och texturer, där varje rätt är
+                        en
+                        konstnärlig skapelse. Från färska skaldjur till lokala delikatesser, utforskar vi det bästa av
+                        lokala råvaror. Med förstklassig service och en atmosfär fylld av välbefinnande är Restaurang
+                        Hansa
+                        en plats att minnas och återvända till. </p>
+                </div>
+            </section>
+    </div>
+    <section id="book-section" class="book-section">
+        <h2 class="book">Boka bord</h2>
+        <div class="book-text">
+            <form id="bookingForm">
+                <label for="name">Namn:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="phoneNumber">Telefonnummer:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required><br>
+
+                <label for="numberOfPeople">Antal personer:</label>
+                <input type="number" id="numberOfPeople" name="numberOfPeople" required><br>
+
+                <label for="date">Datum:</label>
+                <input type="date" id="date" name="date" required><br>
+
+                <label for="time">Tid:</label>
+                <input type="time" id="time" name="time" required><br>
+
+                <button type="submit">Skicka bokning</button>
+                <div id="message"></div>
+            </form>
         </div>
-    </header>
-
-    <main>
-        <section id="welcome-section" class="welcome-section">
-            <h2 class="welcome">Välkommen</h2>
-            <div class="welcome-text">
-                <p>En resturang nära <b>havet</b> för dig som vill <b>njuta</b> lite extra.</p>
-            </div>
-        </section>
-        <section id="menu-section" class="menu-section">
-            <div class="menu">
-                <div class="menu-container">
-                    <!-- Lista för förrätter -->
-                    <div class="menu-list">
-                        <h2 class="menu-heading">Förrätter</h2>
-                        <ul id="starter-list" class="menu-items"></ul>
-                    </div>
-                    <!-- Lista för huvudrätter -->
-                    <div class="menu-list">
-                        <h2 class="menu-heading">Huvudrätter</h2>
-                        <ul id="maincourse-list" class="menu-items"></ul>
-                    </div>
-                    <!-- Lista för desserter -->
-                    <div class="menu-list">
-                        <h2 class="menu-heading">Desserter</h2>
-                        <ul id="dessert-list" class="menu-items"></ul>
-                    </div>
-                </div>
-
-                <div class="menu-container">
-                    <!-- Lista för öl -->
-                    <div class="menu-list">
-                        <h2 class="menu-heading">Öl-lista</h2>
-                        <ul id="beer-list" class="menu-items"></ul>
-                    </div>
-                    <!-- Lista för viner -->
-                    <div class="menu-list">
-                        <h2 class="menu-heading">Vin-lista</h2>
-                        <ul id="wine-list" class="menu-items"></ul>
-                    </div>
-                    <!-- Lista för alkoholfria drycker -->
-                    <div class="menu-list">
-                        <h2 class="menu-heading">Alkoholfritt</h2>
-                        <ul id="nonalcoholic-list" class="menu-items"></ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="about-section" class="about-section">
-            <h2 class="about">Om oss</h2>
-            <div class="about-text">
-                <p> Restaurang Hansa är en oas av kulinariska upplevelser där tradition möter modernitet. Belägen vid
-                    havet, erbjuder den enastående mat från havets skafferi, tillagad med omsorg och passion av våra
-                    erfarna kockar. Med en atmosfär som blandar elegans med avslappnad charm lockar Restaurang Hansa
-                    besökare från när och fjärran. Vår meny är en resa genom smaker och texturer, där varje rätt är en
-                    konstnärlig skapelse. Från färska skaldjur till lokala delikatesser, utforskar vi det bästa av
-                    lokala råvaror. Med förstklassig service och en atmosfär fylld av välbefinnande är Restaurang Hansa
-                    en plats att minnas och återvända till. </p>
-            </div>
-        </section>
-        <section id="book-section" class="book-section">
-            <h2 class="book">Boka bord</h2>
-            <div class="book-text">
-                <form id="bookingForm">
-                    <label for="name">Namn:</label>
-                    <input type="text" id="name" name="name" required><br>
-
-                    <label for="phoneNumber">Telefonnummer:</label>
-                    <input type="tel" id="phoneNumber" name="phoneNumber" required><br>
-
-                    <label for="numberOfPeople">Antal personer:</label>
-                    <input type="number" id="numberOfPeople" name="numberOfPeople" required><br>
-
-                    <label for="date">Datum:</label>
-                    <input type="date" id="date" name="date" required><br>
-
-                    <label for="time">Tid:</label>
-                    <input type="time" id="time" name="time" required><br>
-
-                    <button type="submit">Skicka bokning</button>
-                    <div id="message"></div>
-                </form>
-            </div>
-        </section>
+    </section>
     </main>
     <footer class="footer">
         <div>
